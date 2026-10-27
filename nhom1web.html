@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Nhóm 1 - 12 Lý</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #FEFEFE; /* Snow White */
+        }
+        /* Phần Header */
+        .header-nhom {
+            background-color: #EFB4C3; /* Cherry Blossom */
+            color: #436998; /* East Bay */
+            text-align: center;
+            padding: 20px;
+            border-bottom: 5px solid #D2899B; /* Rose */
+        }
+        .container {
+            width: 85%;
+            margin: auto;
+            padding: 20px;
+        }
+        h2.section-title {
+            color: #3580B8; /* Astral */
+            border-bottom: 2px solid #3580B8; /* Astral */
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        /* Bảng thành viên */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #FEFEFE; /* Snow White */
+        }
+        table, th, td {
+            border: 2px solid #3580B8; /* Astral */
+        }
+        th {
+            background-color: #EFB4C3; /* Cherry Blossom */
+            color: #436998; /* East Bay */
+            padding: 12px;
+            text-align: center;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            color: #436998; /* East Bay */
+            font-weight: bold;
+        }
+
+        /* Định dạng các mục thu gọn (Accordion) */
+        details {
+            border: 2px solid #3580B8; /* Astral */
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background-color: #FEFEFE; /* Snow White */
+            overflow: hidden;
+        }
+        summary {
+            background-color: #EFB4C3; /* Cherry Blossom */
+            color: #436998; /* East Bay */
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none; /* Ẩn mũi tên mặc định ở một số trình duyệt */
+            outline: none;
+        }
+        summary::-webkit-details-marker {
+            display: none; /* Ẩn mũi tên trên Chrome/Safari */
+        }
+        /* Thêm biểu tượng mũi tên tự tạo */
+        summary::before {
+            content: "▶ ";
+            color: #3580B8; /* Astral */
+            display: inline-block;
+            transition: 0.3s;
+        }
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        details[open] summary {
+            border-bottom: 2px solid #3580B8; /* Astral */
+        }
+        .noi-dung-chi-tiet {
+            padding: 20px;
+            color: #333;
+        }
+        
+        /* Định dạng văn bản bên trong */
+        .noi-dung-chi-tiet h1, .noi-dung-chi-tiet h2, .noi-dung-chi-tiet h3 {
+            color: #D2899B; /* Rose */
+        }
+        pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #3580B8; /* Astral */
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-nhom">
+        <h1>NHÓM 1 - 12 LÝ</h1>
+    </div>
+
+    <div class="container">
+        <!-- DANH SÁCH THÀNH VIÊN -->
+        <h2 class="section-title">I. DANH SÁCH THÀNH VIÊN</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ và tên</th>
+                    <th>Vai trò</th>
+                    <th>Năm sinh</th>
+                    <th>Giới tính</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Quang Lý</td>
+                    <td>Nhóm trưởng</td>
+                    <td>2009</td>
+                    <td>Nam</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nhật Quang</td>
+                    <td>Thành viên</td>
+                    <td>2009</td>
+                    <td>Nam</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Xuân Trọng</td>
+                    <td>Thành viên</td>
+                    <td>2009</td>
+                    <td>Nam</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Lê Phạm Gia Ngân</td>
+                    <td>Thành viên</td>
+                    <td>2009</td>
+                    <td>Nữ</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Quốc Hưng</td>
+                    <td>Thành viên</td>
+                    <td>2009</td>
+                    <td>Nam</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- CÁC BÀI TẬP -->
+        <h2 class="section-title">II. CÁC BÀI TẬP</h2>
+
+        <!-- Bài 3 -->
+        <details>
+            <summary>Bài 3</summary>
+            <div class="noi-dung-chi-tiet">
+                <h2>I. LUYỆN TẬP</h2>
+                <h3>Câu 1. Nêu các quy tắc khi thực hiện cuộc gọi bằng điện thoại bàn để minh họa giao thức gọi điện.</h3>
+                <p>Trả lời:<br>Một cuộc gọi điện thoại bàn được tiến hành theo những bước và quy tắc cụ thể như sau:</p>
+                <ol>
+                    <li>Người gọi nhấc ống nghe để sử dụng điện thoại.</li>
+                    <li>Sau khi nghe tín hiệu mời gọi, người gọi bấm số điện thoại của người cần liên lạc.</li>
+                    <li>Hệ thống tiếp nhận số đã nhập và thực hiện việc kết nối.</li>
+                    <li>Điện thoại của người nhận đổ chuông, còn người gọi nghe tín hiệu chờ kết nối.</li>
+                    <li>Trong trường hợp máy bận hoặc số điện thoại không hợp lệ, hệ thống phát tín hiệu thông báo tương ứng.</li>
+                    <li>Khi người nhận nhấc ống nghe, cuộc trò chuyện giữa hai bên bắt đầu.</li>
+                    <li>Sau khi kết thúc trao đổi, người dùng đặt ống nghe xuống để ngắt cuộc gọi.</li>
+                </ol>
+                <p>Kết luận: Giao thức gọi điện thoại là tập hợp những quy tắc giúp các bên thực hiện cuộc gọi đúng trình tự. Tương tự, các thiết bị mạng cũng cần tuân thủ giao thức để có thể trao đổi dữ liệu với nhau.</p>
+
+                <h3>Câu 2. Đổi địa chỉ IP giữa dạng nhị phân và dạng thập phân.</h3>
+                <p>a) Đổi từ nhị phân sang thập phân<br>Địa chỉ IP đã cho:<br>11000000 10101000 00001101 11010010<br>Ta chuyển từng nhóm 8 bit thành số thập phân:</p>
+                <ul>
+                    <li>11000000 tương ứng với 192.</li>
+                    <li>10101000 tương ứng với 168.</li>
+                    <li>00001101 tương ứng với 13.</li>
+                    <li>11010010 tương ứng với 210.</li>
+                </ul>
+                <p>Vì vậy, địa chỉ IP ở dạng thập phân là:<br>192.168.13.210</p>
+                <p>b) Đổi từ thập phân sang nhị phân<br>Địa chỉ IP cần chuyển đổi:<br>131.214.23.16<br>Biểu diễn từng thành phần bằng 8 bit nhị phân:</p>
+                <ul>
+                    <li>131 → 10000011</li>
+                    <li>214 → 11010110</li>
+                    <li>23 → 00010111</li>
+                    <li>16 → 00010000</li>
+                </ul>
+                <p>Do đó, địa chỉ IP dạng nhị phân là:<br>10000011 11010110 00010111 00010000</p>
+
+                <h2>II. VẬN DỤNG</h2>
+                <h3>Câu 1. Tìm hiểu về giao thức DNS.</h3>
+                <p>Trả lời:<br>a) Lợi ích của tên miền<br>Tên miền giúp người dùng truy cập các trang web thuận tiện hơn vì dễ nhớ hơn địa chỉ IP dạng số. Hệ thống DNS có nhiệm vụ phân giải tên miền thành địa chỉ IP tương ứng để máy tính tìm được máy chủ cần kết nối.<br>Ví dụ: Thay vì ghi nhớ địa chỉ IP của Google, người dùng có thể nhập google.com vào thanh địa chỉ của trình duyệt.</p>
+                <p>b) Các lớp tên miền<br>Một số nhóm tên miền thường gặp gồm:</p>
+                <ul>
+                    <li>Tên miền cấp cao nhất dùng chung: Chẳng hạn .com, .org, .net, .edu.</li>
+                    <li>Tên miền cấp cao nhất theo mã quốc gia: Ví dụ .vn của Việt Nam, .jp của Nhật Bản và .uk của Vương quốc Anh.</li>
+                    <li>Tên miền cấp dưới: Là các cấp tên miền nằm bên trái tên miền cấp cao hơn, ví dụ mail.example.com.</li>
+                </ul>
+                <p>c) Đơn vị quản lý tên miền tại Việt Nam<br>Trung tâm Internet Việt Nam (VNNIC) là đơn vị quản lý tài nguyên Internet quốc gia, bao gồm tên miền quốc gia .vn.<br>Các cá nhân và tổ chức có thể đăng ký tên miền .vn thông qua những nhà đăng ký được công nhận.</p>
+
+                <h3>Câu 2. Tìm hiểu và thực hành lệnh ping.</h3>
+                <p>Trả lời:<br>a) Tác dụng của lệnh ping<br>ping là lệnh dùng để kiểm tra khả năng liên lạc qua mạng giữa máy tính đang sử dụng với một máy tính hoặc thiết bị khác. Lệnh thường sử dụng giao thức ICMP để gửi gói tin yêu cầu phản hồi và kiểm tra kết quả trả về.</p>
+                <p>b) Các bước thực hiện<br>Trên hệ điều hành Windows:<br>1. Nhấn tổ hợp phím Windows + R để mở hộp thoại Run.<br>2. Nhập cmd, sau đó nhấn Enter.<br>3. Gõ lệnh sau và nhấn Enter:<br><code>ping -n 4 google.com</code></p>
+                <p>Trên hệ điều hành Linux:<br>Mở Terminal và chạy lệnh:<br><code>ping -c 4 google.com</code><br>Cả hai lệnh trên đều yêu cầu gửi 4 gói tin kiểm tra đến tên miền google.com.</p>
+                <p>c) Đánh giá kết quả</p>
+                <ul>
+                    <li>Nếu máy tính nhận được phản hồi, điều đó cho thấy thiết bị có thể liên lạc với địa chỉ đích tại thời điểm kiểm tra.</li>
+                    <li>Nếu lệnh báo hết thời gian chờ, nguyên nhân có thể là thiết bị đích không phản hồi, đường truyền gặp vấn đề hoặc gói tin bị chặn.</li>
+                    <li>Nếu xuất hiện lỗi không phân giải được tên máy chủ, cần kiểm tra tên miền hoặc cấu hình DNS.</li>
+                </ul>
+                <p>Kết luận: Lệnh ping là công cụ đơn giản để kiểm tra kết nối mạng và thời gian phản hồi. Tuy nhiên, việc không nhận được phản hồi không nhất thiết có nghĩa là mất kết nối Internet, vì một số máy chủ hoặc thiết bị mạng có thể chặn gói tin ICMP.</p>
+            </div>
+        </details>
+
+        <!-- Bài 4 -->
+        <details>
+            <summary>Bài 4</summary>
+            <div class="noi-dung-chi-tiet">
+                <h2>I. LUYỆN TẬP</h2>
+                <h3>Câu 1. Nêu các quy tắc khi gọi điện thoại bằng máy để bàn để làm rõ giao thức gọi điện thoại.</h3>
+                <p>Trả lời:<br>Khi sử dụng điện thoại bàn, người gọi và người nhận cần tuân theo một trình tự nhất định:</p>
+                <ol>
+                    <li>Nhấc ống nghe: Bắt đầu sử dụng điện thoại và chờ tín hiệu mời quay số.</li>
+                    <li>Quay số: Nhập số điện thoại của người cần liên lạc.</li>
+                    <li>Thiết lập kết nối: Hệ thống tiếp nhận số điện thoại và tìm cách kết nối đến người nhận.</li>
+                    <li>Thông báo trạng thái: Điện thoại người nhận reo chuông và người gọi nghe tín hiệu chờ. Nếu máy bận hoặc số không hợp lệ, hệ thống phát tín hiệu báo tương ứng.</li>
+                    <li>Trao đổi thông tin: Khi người nhận nhấc máy, hai bên có thể bắt đầu trò chuyện.</li>
+                    <li>Kết thúc cuộc gọi: Một trong hai bên đặt ống nghe xuống để ngắt kết nối.</li>
+                </ol>
+                <p>Kết luận: Giao thức gọi điện thoại quy định trình tự và cách xử lý trong một cuộc gọi. Tương tự, các thiết bị mạng cũng phải tuân theo những quy tắc chung để trao đổi dữ liệu chính xác.</p>
+
+                <h3>Câu 2. Xác định địa chỉ IP tương ứng ở dạng thập phân và nhị phân.</h3>
+                <p><strong>a) Chuyển địa chỉ IP nhị phân sang thập phân</strong><br>Địa chỉ IP đã cho:<br>11000000 10101000 00001101 11010010<br>Kết quả:<br>192.168.13.210</p>
+                <p><strong>b) Chuyển địa chỉ IP thập phân sang nhị phân</strong><br>Địa chỉ IP đã cho:<br>131.214.23.16<br>Kết quả:<br>10000011 11010110 00010111 00010000</p>
+
+                <h2>II. VẬN DỤNG</h2>
+                <h3>Câu 1. Tìm hiểu giao thức tên miền DNS.</h3>
+                <p>Trả lời:<br><strong>a) Lợi ích của việc sử dụng tên miền</strong></p>
+                <ul>
+                    <li>Tên miền dễ nhớ và thuận tiện hơn so với địa chỉ IP dạng số.</li>
+                    <li>Người dùng có thể truy cập website mà không cần ghi nhớ địa chỉ IP của máy chủ.</li>
+                    <li>DNS thực hiện việc phân giải tên miền thành địa chỉ IP tương ứng để thiết bị xác định máy chủ cần kết nối.</li>
+                </ul>
+                <p>Ví dụ: Khi muốn truy cập Google, người dùng chỉ cần nhập google.com vào trình duyệt.</p>
+                <p><strong>b) Các lớp tên miền</strong><br>Một số loại tên miền thường gặp gồm:</p>
+                <ul>
+                    <li>Tên miền cấp cao nhất dùng chung (gTLD): Ví dụ .com, .org, .net, .edu.</li>
+                    <li>Tên miền cấp cao nhất theo mã quốc gia (ccTLD): Ví dụ .vn của Việt Nam, .jp của Nhật Bản và .us của USA</li>
+                    <li>Tên miền cấp dưới: Là các cấp tên miền nằm bên trái tên miền cấp cao hơn, ví dụ chuyenbentre.lms.vnedu.vn</li>
+                </ul>
+                <p><strong>c) Tổ chức phụ trách quản lý tên miền tại Việt Nam</strong><br>Trung tâm Internet Việt Nam (VNNIC) là đơn vị quản lý tài nguyên Internet quốc gia, bao gồm tên miền quốc gia .vn và ..com.vn<br>Các cá nhân và tổ chức có thể đăng ký tên miền .vn thông qua những nhà đăng ký được công nhận.</p>
+
+                <h3>Câu 2. Tìm hiểu lệnh ping và thử nghiệm sử dụng lệnh này.</h3>
+                <p>Trả lời:<br><strong>a) Lệnh ping là gì?</strong><br>ping là lệnh mạng được sử dụng để kiểm tra khả năng liên lạc giữa máy tính đang sử dụng với một máy tính hoặc thiết bị mạng khác.<br>Lệnh này thường sử dụng giao thức ICMP để gửi gói tin yêu cầu phản hồi và kiểm tra thời gian nhận được phản hồi.</p>
+                <p><strong>b) Cách sử dụng lệnh ping</strong><br>Trên Windows:<br>1. Nhấn tổ hợp phím Windows + R.<br>2. Nhập cmd rồi nhấn Enter.<br>3. Nhập lệnh sau:<br><code>ping -n 4 google.com</code><br>4. Nhấn Enter và quan sát kết quả.</p>
+                <p><strong>c) Kết quả minh họa trên Windows CMD</strong><br>Ví dụ, sau khi chạy lệnh trên Windows, màn hình có thể hiển thị kết quả như sau:</p>
+<pre>
+C:\Users\hp>ping -n 4 google.com
+
+Pinging google.com [142.250.72.14] with 32 bytes of data:
+Reply from 142.250.72.14: bytes=32 time=28ms TTL=117
+Reply from 142.250.72.14: bytes=32 time=31ms TTL=117
+Reply from 142.250.72.14: bytes=32 time=27ms TTL=117
+Reply from 142.250.72.14: bytes=32 time=30ms TTL=117
+
+Ping statistics for 142.250.72.14:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 27ms, Maximum = 31ms, Average = 29ms
+</pre>
+                <p>Nhận xét kết quả:</p>
+                <ul>
+                    <li>Sent = 4: Máy tính đã gửi 4 gói tin.</li>
+                    <li>Received = 4: Máy tính nhận được phản hồi từ cả 4 gói tin.</li>
+                    <li>Lost = 0 (0% loss): Không có gói tin nào bị mất.</li>
+                    <li>Average = 29ms: Thời gian phản hồi trung bình là 29 mili giây.</li>
+                </ul>
+                <p>Kết luận: Lệnh ping giúp kiểm tra khả năng liên lạc qua mạng và đo thời gian phản hồi giữa các thiết bị. Nếu không nhận được phản hồi, chưa thể khẳng định Internet bị mất hoàn toàn vì máy chủ hoặc thiết bị mạng có thể chặn gói tin ICMP.</p>
+            </div>
+        </details>
+
+        <!-- Bài 5 -->
+        <details>
+            <summary>Bài 5</summary>
+            <div class="noi-dung-chi-tiet">
+                <h2>I. LUYỆN TẬP</h2>
+                <h3>Câu 1. Thực hành chia sẻ tệp và thư mục</h3>
+                <p>Trả lời:<br>Hai máy tính A và B cần được kết nối trong cùng mạng LAN để có thể chia sẻ dữ liệu với nhau.</p>
+                <p><strong>a) Thiết lập quyền chỉ đọc (Read)</strong></p>
+                <ul>
+                    <li>Máy A: Tạo một thư mục mới, bên trong có các thư mục con và tệp văn bản. Nhấp chuột phải vào thư mục, mở Properties → Sharing → Advanced Sharing, sau đó bật Share this folder và đặt quyền Read.</li>
+                    <li>Máy B: Truy cập thư mục của máy A qua mạng và thử mở những tệp đã chia sẻ.</li>
+                </ul>
+                <p>Kết quả: Máy B đọc được nội dung nhưng không thể chỉnh sửa hoặc xóa dữ liệu thông qua quyền chỉ đọc.</p>
+                
+                <p><strong>b) Cho phép đọc và ghi (Read/Write)</strong></p>
+                <ul>
+                    <li>Máy A: Thay đổi thiết lập chia sẻ, cấp thêm quyền Change cho tài khoản được phép sử dụng.</li>
+                    <li>Máy B: Truy cập thư mục, thử chỉnh sửa một tệp văn bản rồi lưu lại.</li>
+                </ul>
+                <p>Kết quả: Máy B có thể đọc, sửa nội dung và tạo tệp mới trong phạm vi quyền được cho phép.</p>
+
+                <p><strong>c) Ngừng chia sẻ dữ liệu</strong></p>
+                <ul>
+                    <li>Máy A: Mở lại phần Advanced Sharing, bỏ chọn Share this folder và xác nhận.</li>
+                    <li>Máy B: Thử truy cập đường dẫn chia sẻ trước đó để kiểm tra.</li>
+                </ul>
+                <p>Kết quả: Máy B không còn truy cập được thư mục thông qua chế độ chia sẻ đã tắt.</p>
+
+                <p><strong>d) Thực hành theo chiều ngược lại</strong><br>Hai máy đổi nhiệm vụ cho nhau. Máy B thiết lập các mức quyền chia sẻ, còn máy A kiểm tra khả năng đọc, chỉnh sửa và truy cập dữ liệu sau khi việc chia sẻ bị ngừng.<br>Lưu ý: Khả năng đọc hoặc sửa tệp còn phụ thuộc vào quyền bảo mật của thư mục trên máy chủ chia sẻ.</p>
+
+                <h3>Câu 2. Chia sẻ máy in giữa hai nhóm</h3>
+                <p>Trả lời:<br>Để nhóm này sử dụng máy in của nhóm kia qua mạng, thực hiện như sau:</p>
+                <ol>
+                    <li>Nhóm 1 kết nối máy in với máy tính và cài đặt trình điều khiển phù hợp.</li>
+                    <li>Mở phần cài đặt máy in, chọn máy in cần dùng chung rồi vào Printer properties → Sharing.</li>
+                    <li>Bật Share this printer và đặt tên cho máy in được chia sẻ.</li>
+                    <li>Nhóm 2 tìm máy in đó trong mạng nội bộ hoặc thêm máy in bằng đường dẫn mạng.</li>
+                    <li>Thực hiện in thử một tài liệu để xác nhận máy in hoạt động.</li>
+                </ol>
+                <p>Sau khi hoàn thành, hai nhóm đổi vai trò và tiến hành tương tự.<br>Kết quả: Các máy tính được cấp quyền có thể dùng chung một máy in qua mạng, giúp tiết kiệm thiết bị và thuận tiện khi in tài liệu.</p>
+
+                <h2>II. VẬN DỤNG</h2>
+                <h3>Câu 1. Tìm hiểu cách chia sẻ toàn bộ một ổ đĩa</h3>
+                <p>Trả lời:<br>Windows cho phép người dùng chia sẻ một ổ đĩa với các máy tính khác trong mạng. Khi được cấp quyền phù hợp, máy tính khác có thể truy cập những thư mục và tệp nằm trong ổ đĩa đó.</p>
+                <p><strong>Cách thiết lập chia sẻ</strong><br>Bước 1: Mở File Explorer, nhấn chuột phải vào ổ đĩa cần chia sẻ và chọn Properties.<br>Bước 2: Chọn thẻ Sharing, sau đó nhấn Advanced Sharing.<br>Bước 3: Đánh dấu Share this folder và nhập tên dùng để nhận diện ổ đĩa trên mạng.<br>Bước 4: Chọn Permissions để thiết lập quyền:</p>
+                <ul>
+                    <li>Read: Cho phép xem và đọc dữ liệu.</li>
+                    <li>Change: Cho phép đọc, tạo, chỉnh sửa hoặc xóa dữ liệu trong phạm vi quyền được cấp.</li>
+                    <li>Full Control: Cho phép quản lý tài nguyên chia sẻ ở mức đầy đủ, tùy theo các quyền bảo mật áp dụng.</li>
+                </ul>
+                <p>Bước 5: Nhấn Apply rồi OK để lưu cài đặt.</p>
+                <p><strong>Truy cập ổ đĩa từ máy tính khác</strong><br>Trên máy tính cùng mạng LAN, mở File Explorer và nhập địa chỉ theo mẫu:<br><code>\\Tên-máy-tính\Tên-chia-sẻ</code> hoặc <code>\\PC01\Data</code><br>Nếu xuất hiện yêu cầu đăng nhập, người dùng cần cung cấp tài khoản có quyền truy cập.<br>Kết luận: Chia sẻ ổ đĩa giúp các máy tính trao đổi dữ liệu thuận tiện mà không cần sao chép tệp qua thiết bị lưu trữ ngoài. Tuy nhiên, nên giới hạn quyền truy cập và tránh chia sẻ ổ đĩa chứa thông tin quan trọng để bảo đảm an toàn dữ liệu.</p>
+            </div>
+        </details>
+
+        <!-- Bài 6 -->
+        <details>
+            <summary>Bài 6</summary>
+            <div class="noi-dung-chi-tiet">
+                <h2>LUYỆN TẬP</h2>
+                <h3>Câu 1. Kể về một trải nghiệm giao tiếp trong không gian mạng mà em từng tham gia.</h3>
+                <p>Trả lời:<br>Em đã từng sử dụng Zalo để trao đổi với các thành viên trong nhóm học tập. Chúng em thường gửi câu hỏi, thảo luận cách giải bài tập và chia sẻ hình ảnh bài ghi trên lớp. Nhờ hình thức giao tiếp này, các thành viên có thể hỗ trợ nhau ngay cả khi không ở cùng một địa điểm. Qua trải nghiệm đó, em nhận thấy giao tiếp trên mạng rất hữu ích, đồng thời cần sử dụng ngôn từ phù hợp và tôn trọng mọi người.</p>
+
+                <h3>Câu 2. Nêu một số ví dụ về việc vận dụng lợi ích của giao tiếp trong không gian mạng để giúp công việc và cuộc sống thuận tiện hơn.</h3>
+                <p>Trả lời:<br>Một số ví dụ cụ thể như sau:</p>
+                <ul>
+                    <li>Học tập: Học sinh trao đổi bài qua nhóm chat, gửi tài liệu và nhắc nhau về thời hạn nộp bài.</li>
+                    <li>Làm việc: Đồng nghiệp sử dụng email để gửi báo cáo, nhận thông báo và trao đổi thông tin.</li>
+                    <li>Liên lạc với gia đình: Cuộc gọi video giúp mọi người trò chuyện trực tiếp với người thân ở xa.</li>
+                    <li>Mua bán trực tuyến: Khách hàng nhắn tin hỏi giá, xem thông tin sản phẩm và đặt hàng mà không cần đến cửa hàng.</li>
+                    <li>Học từ xa: Giáo viên tổ chức bài giảng trực tuyến để học sinh tham gia học tập tại nhà.</li>
+                </ul>
+                <p>Như vậy, giao tiếp trong không gian mạng giúp con người kết nối nhanh chóng, giảm thời gian đi lại và nâng cao hiệu quả học tập, làm việc.</p>
+
+                <h2>VẬN DỤNG</h2>
+                <h3>Câu 1. Viết thư điện tử trao đổi về một tình huống trong cuộc sống.</h3>
+                <p>Tình huống: Em muốn rủ bạn cùng tham gia làm bài thuyết trình nhóm.</p>
+                <p>Chào Quốc Hưng!</p>
+                <p>Tuần tới, nhóm mình phải thuyết trình môn Tin học. Mình muốn rủ bạn cùng chuẩn bị nội dung và làm slide để bài thuyết trình được tốt hơn.</p>
+                <p>Chiều thứ Bảy tuần này, bạn có rảnh không? Nếu được, chúng mình có thể gặp nhau ở nhà mình để phân chia công việc và hoàn thành bài thuyết trình.</p>
+                <p>Bạn phản hồi cho mình biết nhé!</p>
+                <p>Cảm ơn bạn. Chúc bạn một ngày vui vẻ!</p>
+                <p>Thân mến,<br><strong>Quang Lý</strong></p>
+            </div>
+        </details>
+       <!-- Bài 7 -->
+        <details>
+            <summary>Bài 7</summary>
+            <div class="noi-dung-chi-tiet">
+                <h2>I. LUYỆN TẬP</h2>
+                <h3>Câu 1. Nêu ví dụ về các phần tử HTML không thể lồng nhau, tức là không thể có quan hệ cha – con trong cây thông tin của trang web.</h3>
+                <p>Trả lời:<br>Trong HTML, không phải phần tử nào cũng có thể chứa phần tử khác. Một số trường hợp không được phép lồng nhau gồm:</p>
+                <ul>
+                    <li>Thẻ &lt;p&gt; không được chứa một thẻ &lt;p&gt; khác.</li>
+                    <li>Thẻ &lt;h1&gt; không được chứa thẻ tiêu đề &lt;h2&gt; bên trong.</li>
+                    <li>Thẻ &lt;ul&gt; không được chứa trực tiếp thẻ &lt;p&gt; như một phần tử con thông thường; các phần tử con trực tiếp chủ yếu là &lt;li&gt;.</li>
+                </ul>
+                <p>Ví dụ về cách viết không hợp lệ:</p>
+<pre>
+&lt;p&gt;Đây là đoạn văn thứ nhất.
+    &lt;p&gt;Đây là đoạn văn thứ hai.&lt;/p&gt;
+&lt;/p&gt;
+</pre>
+                <p>Giải thích: Hai thẻ &lt;p&gt; không thể lồng vào nhau. Khi trình duyệt gặp thẻ &lt;p&gt; thứ hai, nó có thể tự động kết thúc thẻ &lt;p&gt; thứ nhất.</p>
+
+                <h3>Câu 2. Soạn tệp HTML hiển thị một văn bản đơn giản và vẽ cây thông tin của trang web.</h3>
+                <p>Trả lời:<br>Chọn nội dung văn bản: “Chào mừng bạn đến với trang web của em!”</p>
+                <p><strong>a) Mã HTML</strong><br>Tạo tệp index.html và nhập đoạn mã sau:</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Trang web của em&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Xin chào!&lt;/h1&gt;
+    &lt;p&gt;Chào mừng bạn đến với trang web của em!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                <p><strong>b) Cây thông tin của trang web</strong></p>
+<pre>
+html
+├── head
+│   ├── meta
+│   └── title
+│       └── "Trang web của em"
+└── body
+    ├── h1
+    │   └── "Xin chào!"
+    └── p
+        └── "Chào mừng bạn đến với trang web của em!"
+</pre>
+                <p>Nhận xét: Phần tử html là gốc của cây. Hai phần tử head và body là con trực tiếp của nó. Phần tử head chứa thông tin về trang web, còn body chứa các nội dung được hiển thị trên trang.</p>
+
+                <h2>II. VẬN DỤNG</h2>
+                <h3>Câu 1. Tìm trên mạng các trang web hỗ trợ soạn thảo HTML trực tuyến.</h3>
+                <p>Trả lời:<br>Một số công cụ hỗ trợ lập trình web trực tuyến gồm:</p>
+                <ol>
+                    <li>PlayCode: https://playcode.io/ — Cho phép viết HTML, CSS và JavaScript, đồng thời xem trước kết quả ngay trong trình duyệt.</li>
+                    <li>Liveweave: https://liveweave.com/ — Hỗ trợ chỉnh sửa mã HTML, CSS, JavaScript và hiển thị kết quả trực tiếp.</li>
+                    <li>StackBlitz: https://stackblitz.com/ — Cung cấp môi trường lập trình web trực tuyến để tạo và chạy thử các dự án.</li>
+                </ol>
+                <p>Các công cụ này giúp học sinh thực hành thiết kế trang web mà không cần cài đặt phần mềm lập trình trên máy tính.</p>
+
+                <h3>Câu 2. Soạn thảo trang web có nội dung như Hình 7.7.</h3>
+                <p>Trả lời:<br><strong>a) Mã HTML</strong></p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="vi"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Lịch sử phát triển HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;Lịch sử phát triển HTML&lt;/h3&gt;
+    &lt;p&gt;
+        Các chuẩn HTML của trang web hiện nay được nhà vật lí
+        Tim Berners-Lee đưa ra lần đầu tiên vào những năm 1990
+        của thế kỉ XX tại Trung tâm Vật lí Hạt nhân CERN.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Ý tưởng ban đầu của Berners-Lee là muốn thiết lập một
+        chuẩn chung để thể hiện và chia sẻ các văn bản có thể
+        trao đổi bên trong cơ quan CERN.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Hình ảnh sau là sơ đồ thông tin mà Tim Berners-Lee đưa ra
+        lần đầu tiên để minh họa cho ý tưởng của mình. Trong sơ đồ
+        này, lần đầu tiên xuất hiện cụm từ "hypertext"
+        (siêu văn bản).
+    &lt;/p&gt;
+    &lt;img src="HTML.png" alt="Sơ đồ lịch sử phát triển HTML" width="600"&gt;
+    &lt;p&gt;
+        Phiên bản đầu tiên của HTML được thiết lập vào cuối năm
+        1991 mang tên "Các thẻ HTML". Văn bản này do chính Tim
+        Berners-Lee biên soạn.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Từ đó, các phiên bản tiếp theo của HTML lần lượt ra đời
+        cùng với sự phát triển của công nghệ Internet.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Phiên bản hiện tại là HTML5 ra đời năm 2014.
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                <p><strong>b) Cách thực hiện</strong><br>1. Mở phần mềm soạn thảo như Notepad hoặc Visual Studio Code.<br>2. Nhập mã HTML và lưu tệp với tên index.html.<br>3. Đặt hình ảnh minh họa trong cùng thư mục với tệp HTML, đổi tên ảnh thành lichsuHTML.png.<br>4. Mở tệp index.html bằng trình duyệt để xem kết quả.</p>
+                <p><strong>c) Giải thích các thẻ được sử dụng</strong></p>
+                <ul>
+                    <li>&lt;h3&gt;: Tạo tiêu đề cho trang web.</li>
+                    <li>&lt;p&gt;: Trình bày từng đoạn văn bản.</li>
+                    <li>&lt;img&gt;: Chèn hình ảnh vào trang.</li>
+                    <li>src="lichsuHTML.png": Xác định đường dẫn tới tệp hình ảnh.</li>
+                    <li>alt: Cung cấp nội dung mô tả thay thế cho hình ảnh.</li>
+                    <li>width="600": Đặt chiều rộng ảnh là 600 pixel.</li>
+                </ul>
+                <p>Kết luận: Bằng cách kết hợp các thẻ HTML như &lt;h3&gt;, &lt;p&gt; và &lt;img&gt;, ta có thể xây dựng một trang web chứa tiêu đề, văn bản và hình minh họa. Để kết quả giống Hình 7.7, cần sử dụng đúng hình ảnh và nội dung theo sách giáo khoa.</p>
+            </div>
+        </details>
+
+        <!-- Bài 8 -->
+        <details>
+            <summary>Bài 8</summary>
+            <div class="noi-dung-chi-tiet">
+                <p><strong>Luyện tập 1:</strong> Hãy sửa lại phần tử sau để làm nổi bật ý chính của câu: &lt;p&gt; thẻ strong vào thẻ em được sử dụng để nhấn mạnh vào nội dung trong phần tử. Thẻ B chỉ có tác dụng in đậm văn bản &lt;p&gt;</p>
+                <p><strong>Lời giải:</strong><br>&lt;p&gt;&lt;strong&gt;Thẻ strong&lt;/strong&gt; vào &lt;em&gt;thẻ em&lt;/em&gt; được sử dụng để nhấn mạnh vào nội dung trong phần tử. Thẻ &lt;strong&gt;B&lt;/strong&gt; chỉ có tác dụng in đậm văn bản.&lt;/p&gt;</p>
+                
+                <p><strong>Luyện tập 2:</strong> Trình bày đoạn văn bản sau bằng mã HTML:<br>INTERNET TỐC ĐỘ CAO<br>Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.<br><strong>Các tính năng nổi bật:</strong><br>Tốc độ siêu cao từ 150 MBps trở lên<br>Lắp đặt nhanh chóng trong 24h<br>Phù hợp với cá nhân/Hộ gia đình<br>Tặng modem 2 băng tần<br>Miễn phí lắp đặt hỗ trợ 24/7 .</p>
+                <p><strong>Lời giải:</strong></p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+ &lt;meta charset="UTF-8"&gt;
+ &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+ &lt;title&gt;INTERNET TỐC ĐỘ CAO&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;INTERNET TỐC ĐỘ CAO&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Dịch vụ Internet tốc độ cao là dịch vụ internet cáp quang chất lượng cao, ổn định, giá cả hợp lí.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;strong&gt;Các tính năng nổi bật:&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+ &lt;li&gt;Tốc độ siêu cao từ 150 MBps trở lên&lt;/li&gt;
+ &lt;li&gt;Lắp đặt nhanh chóng trong 24h&lt;/li&gt;
+ &lt;li&gt;Phù hợp với cá nhân/Hộ gia đình&lt;/li&gt;
+ &lt;li&gt;Tặng modem 2 băng tần&lt;/li&gt;
+ &lt;li&gt;Miễn phí lắp đặt hỗ trợ 24/7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                <p><strong>Khám phá thêm</strong><br>Học ngành CNTT<br>Tìm Tài Liệu<br>Chọn Trường Học</p>
+                
+                <p><strong>Vận dụng 1:</strong> Hãy chỉ ra các bước cần thực hiện để sử dụng một màu cụ thể trong bức ảnh làm màu cho tiêu đề một bài thơ.</p>
+                <p><strong>Lời giải:</strong><br>Chọn màu cụ thể: Trước tiên, bạn cần quyết định màu sắc bạn muốn sử dụng cho tiêu đề của bài thơ.<br>Chọn ảnh nền: Chọn một bức ảnh phù hợp để sử dụng làm nền cho tiêu đề. Bạn cũng có thể sử dụng một ảnh trắng đơn giản và thêm màu sắc sau đó.<br>Tạo tiêu đề trong HTML: Sử dụng thẻ &lt;h1&gt;, &lt;h2&gt;, hoặc &lt;h3&gt; để tạo tiêu đề của bài thơ.<br>Thêm ảnh nền và thuộc tính color để thay đổi màu chữ.</p>
+                
+                <p><strong>Vận dụng 2:</strong> Hãy đưa ra các định dạng một đoạn văn bản để được kết quả như sau:</p>
+                <p><strong>Lời giải:</strong><br>- Định dạng chữ đậm<br>- Định dạng chữ thường.<br>- Định dạng chữ cỡ chữ.</p>
+            </div>
+        </details>
+
+        <!-- Bài 9 -->
+        <details>
+            <summary>Bài 9</summary>
+            <div class="noi-dung-chi-tiet">
+                <p><strong>Luyện tập</strong></p>
+                <p>Sửa lại chương trình trong Hình 9.5a, sử dụng thuộc tính Style thay vì thuộc tính border để tạo viền cho bảng. Sử dụng màu xanh cho viền của ô hai dòng đầu bảng và sử dụng 3 màu đỏ, vàng, xanh cho ba chữ Toán, Vật lý và Hóa học.</p>
+<pre>
+&lt;table style="border-collapse: collapse;"&gt;
+  &lt;tr&gt;
+ &lt;th rowspan="2" style="border: 2px solid blue;"&gt;Họ tên&lt;/th&gt;
+ &lt;th rowspan="3" style="border: 2px solid blue;"&gt;Điểm thi&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+ &lt;td style="border: 2px solid red;"&gt;Toán&lt;/td&gt;
+ &lt;td style="border: 2px solid yellow;"&gt;Vật lí&lt;/td&gt;
+ &lt;td style="border: 2px solid green;"&gt;Hóa học&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+                <p><strong>Vận dụng:</strong></p>
+                <p>Cho trước một bảng dữ liệu cỡ nx4, mỗi hàng tương ứng với một bộ (họ tên, điểm Toán, điểm Vật lý, điểm Hóa học) viết chương trình Python để tạo ra tệp HTML thực hiện việc vẽ bảng tương tự như Hình 9.5 và bổ sung dữ liệu vào các hàng phía dưới.</p>
+<pre>
+def generate_html_table(data):
+ html_content = "&lt;table style=\"border-collapse: collapse;\"&gt;"
+ # Thêm tiêu đề cho bảng
+ html_content += "&lt;tr&gt;"
+ html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Họ tên&lt;/th&gt;"
+ html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Điểm Toán&lt;/th&gt;"
+ html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Điểm Vật lí&lt;/th&gt;"
+ html_content += "&lt;th style=\"border: 2px solid blue;\"&gt;Điểm Hóa học&lt;/th&gt;"
+ html_content += "&lt;/tr&gt;"
+ # Thêm dữ liệu từ list data vào bảng
+ for row in data:
+     html_content += "&lt;tr&gt;"
+     for value in row:
+         html_content += f"&lt;td style=\"border: 2px solid black;\"&gt;{value}&lt;/td&gt;"
+     html_content += "&lt;/tr&gt;"
+ html_content += "&lt;/table&gt;"
+ return html_content
+
+# Dữ liệu ban đầu
+initial_data = [
+ ["Họ tên", "Điểm Toán", "Điểm Vật lí", "Điểm Hóa học"],
+ ["Nguyễn Văn A", "8.5", "7.0", "9.0"],
+ ["Trần Thị B", "7.0", "8.0", "8.5"]
+]
+
+# Dữ liệu mới cần bổ sung
+new_data = [
+ ["Lê Quang C", "6.5", "7.5", "8.0"],
+ ["Phạm Thị D", "9.0", "8.5", "7.5"]
+]
+
+# Kết hợp dữ liệu cũ và mới
+combined_data = initial_data + new_data
+
+# Tạo nội dung HTML cho bảng dữ liệu
+html_content = generate_html_table(combined_data)
+
+# Lưu nội dung HTML vào tệp
+with open("data_table.html", "w") as file:
+ file.write(html_content)
+print("Tạo tệp HTML thành công!")
+</pre>
+            </div>
+        </details>
+
+        <!-- Bài 10 -->
+        <details>
+            <summary>Bài 10</summary>
+            <div class="noi-dung-chi-tiet">
+                <h2>LUYỆN TẬP</h2>
+                <p>Câu 1.<br>Trả lời:</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Thông tin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Nội dung của trang thông tin --&gt;
+    &lt;h1&gt;Thông tin CLB&lt;/h1&gt;
+    &lt;p&gt;Đây là trang thông tin về CLB của chúng ta.&lt;/p&gt;
+    &lt;!-- Liên kết quay về trang chủ --&gt;
+    &lt;a href="CLB.html"&gt;Quay về trang chủ&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                <p>Câu 2.<br>Trả lời:</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Giới thiệu bản thân&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Giới thiệu bản thân&lt;/h1&gt;
+    &lt;p&gt;Xin chào! Tôi là [Tên của bạn], đây là một trang web giới thiệu về bản thân tôi.&lt;/p&gt;
+    &lt;h2&gt;Bạn cùng lớp&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend1" target="_blank"&gt;Facebook của Bạn 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend2" target="_blank"&gt;Facebook của Bạn 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="https://www.facebook.com/friend3" target="_blank"&gt;Facebook của Bạn 3&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Cảm ơn bạn đã ghé thăm!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                
+                <h2>VẬN DỤNG</h2>
+                <p>Trả lời:</p>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Lịch hoạt động công tác CLB thể thao&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Lịch hoạt động công tác CLB thể thao&lt;/h1&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Tên câu lạc bộ&lt;/th&gt;
+            &lt;th&gt;Lịch hoạt động&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;a href="#club1"&gt;Câu lạc bộ A&lt;/a&gt;&lt;/td&gt;
+            &lt;td&gt;Thứ Hai, Thứ Tư, Thứ Sáu - 18:00 đến 20:00&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;a href="#club2"&gt;Câu lạc bộ B&lt;/a&gt;&lt;/td&gt;
+            &lt;td&gt;Thứ Ba, Thứ Năm - 16:00 đến 18:00&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;!--Thêm hàng cho các câu lạc bộ khác nếu cần--&gt;
+    &lt;/table&gt;
+
+    &lt;h2 id="club1"&gt;Câu lạc bộ A&lt;/h2&gt;
+    &lt;p&gt;Địa điểm: Sân Bóng XYZ&lt;/p&gt;
+    &lt;p&gt;Thành viên: 50&lt;/p&gt;
+    &lt;p&gt;Thành tích: Đạt giải nhất giải đấu Thể thao X năm 20XX&lt;/p&gt;
+    &lt;p&gt;Phí hội viên: 100.000 đồng/tháng&lt;/p&gt;
+    &lt;p&gt;Điện thoại liên hệ: 0123 456 789&lt;/p&gt;
+
+    &lt;h2 id="club2"&gt;Câu lạc bộ B&lt;/h2&gt;
+    &lt;p&gt;Địa điểm: Bể Bơi ABC&lt;/p&gt;
+    &lt;p&gt;Thành viên: 30&lt;/p&gt;
+    &lt;p&gt;Thành tích: Huy chương vàng môn bơi lội tại Hội thao Y năm 20XX&lt;/p&gt;
+    &lt;p&gt;Phí hội viên: 150.000 đồng/tháng&lt;/p&gt;
+    &lt;p&gt;Điện thoại liên hệ: 0987 654 321&lt;/p&gt;
+    &lt;!--Thêm phần giới thiệu cho các câu lạc bộ khác nếu cần--&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+            </div>
+        </details>
+    </div>
+
+</body>
+</html>
