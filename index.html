@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftHub - Nhóm 1 - 12 Lý</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Thư viện: đọc YAML và render Markdown -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header-nhom"><h1 id="site-header">Đang tải...</h1></div>
+
+        <h2 class="section-title" id="members-title"></h2>
+        <div class="tabs-container" id="members-tabs"></div>
+        <div id="members-panel"></div>
+
+        <h2 class="section-title" id="exercises-title"></h2>
+        <div class="tabs-container" id="exercises-tabs"></div>
+        <div id="exercises-panel"></div>
+    </div>
+
+    <script>
+        const CONFIG_URL = 'config.yaml';
+        const cache = {};
+
+        async function fetchText(url) {
+            if (cache[url]) return cache[url];
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(url + ' (HTTP ' + res.status + ')');
+            return (cache[url] = await res.text());
+        }
+
+        function showError(panel, err) {
+            const hint = location.protocol === 'file:'
+                ? ' Trình duyệt chặn đọc file khi mở trực tiếp (file://). Hãy chạy run.bat / run.sh rồi mở http://localhost:8000, hoặc đưa lên GitHub Pages.'
+                : '';
+            panel.innerHTML = '';
+            const p = document.createElement('p');
+            p.className = 'load-error';
+            p.textContent = 'Không tải được nội dung: ' + err.message + '.' + hint;
+            panel.appendChild(p);
+        }
+
+        // Nội dung thành viên: lấy phần <main> của file HTML tĩnh
+        async function renderMember(item, panel) {
+            const doc = new DOMParser().parseFromString(await fetchText(item.file), 'text/html');
+            const main = doc.querySelector('main') || doc.body;
+            const h3 = main.querySelector('h3'); // tên đã có trên nút tab
+            if (h3) h3.remove();
+            panel.innerHTML = main.innerHTML;
+        }
+
+        // Nội dung bài tập: render Markdown
+        async function renderExercise(item, panel) {
+            panel.innerHTML = marked.parse(await fetchText(item.file), { breaks: true, gfm: true });
+        }
+
+        // Tạo một nhóm tab (nút + vùng nội dung)
+        function buildTabs({ tabsEl, panelEl, items, label, panelClass, buttonClass, render, initial }) {
+            const panel = document.createElement('div');
+            panel.className = panelClass + ' active';
+            panelEl.appendChild(panel);
+
+            const buttons = items.map((item, i) => {
+                const btn = document.createElement('button');
+                btn.className = buttonClass;
+                btn.textContent = label(item, i);
+                btn.addEventListener('click', () => select(i));
+                tabsEl.appendChild(btn);
+                return btn;
+            });
+
+            async function select(i) {
+                buttons.forEach((b, k) => b.classList.toggle('active', k === i));
+                panel.innerHTML = '<p class="loading">Đang tải...</p>';
+                try { await render(items[i], panel); }
+                catch (err) { showError(panel, err); }
+                return i;
+            }
+            select(initial);
+            return select;
+        }
+
+        async function main() {
+            let config;
+            try {
+                config = jsyaml.load(await fetchText(CONFIG_URL));
+            } catch (err) {
+                const h = document.getElementById('site-header');
+                h.textContent = 'Lỗi tải cấu hình';
+                showError(document.getElementById('members-panel'), err);
+                return;
+            }
+
+            document.title = config.site.title;
+            document.getElementById('site-header').textContent = config.site.header;
+
+            document.getElementById('members-title').textContent = config.members.title;
+            buildTabs({
+                tabsEl: document.getElementById('members-tabs'),
+                panelEl: document.getElementById('members-panel'),
+                items: config.members.list,
+                label: (m, i) => (i + 1) + '. ' + m.name,
+                panelClass: 'member-content',
+                buttonClass: 'member-button',
+                render: renderMember,
+                initial: 0
+            });
+
+            document.getElementById('exercises-title').textContent = config.exercises.title;
+            const exercises = config.exercises.list;
+            const fromHash = exercises.findIndex(e => '#' + e.id === location.hash);
+            const selectExercise = buildTabs({
+                tabsEl: document.getElementById('exercises-tabs'),
+                panelEl: document.getElementById('exercises-panel'),
+                items: exercises,
+                label: e => e.title,
+                panelClass: 'tab-content',
+                buttonClass: 'tab-button',
+                render: renderExercise,
+                initial: fromHash >= 0 ? fromHash : 0
+            });
+            // Cập nhật hash để chia sẻ link thẳng tới một bài
+            document.getElementById('exercises-tabs').addEventListener('click', e => {
+                const i = [...e.currentTarget.children].indexOf(e.target);
+                if (i >= 0) history.replaceState(null, '', '#' + exercises[i].id);
+            });
+        }
+
+        main();
+    </script>
+</body>
+</html>

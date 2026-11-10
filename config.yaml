@@ -1,0 +1,49 @@
+# Cấu hình trang nhóm - chỉnh file này để thêm/bớt thành viên và bài tập
+site:
+  title: "GiftHub - Nhóm 1 - 12 Lý"
+  header: "NHÓM 1 - 12 LÝ"
+
+members:
+  title: "I. HỒ SƠ THÀNH VIÊN"
+  list:
+    - name: "Quang Lý"
+      file: members/tv1.html
+    - name: "Nhật Quang"
+      file: members/tv2.html
+    - name: "Xuân Trọng"
+      file: members/tv3.html
+    - name: "Gia Ngân"
+      file: members/tv4.html
+    - name: "Quốc Hưng"
+      file: members/tv5.html
+
+exercises:
+  title: "II. CÁC BÀI TẬP"
+  list:
+    - id: bai3
+      title: "Bài 3"
+      file: exercises/bai3.md
+    - id: bai4
+      title: "Bài 4"
+      file: exercises/bai4.md
+    - id: bai5
+      title: "Bài 5"
+      file: exercises/bai5.md
+    - id: bai6
+      title: "Bài 6"
+      file: exercises/bai6.md
+    - id: bai7
+      title: "Bài 7"
+      file: exercises/bai7.md
+    - id: bai8
+      title: "Bài 8"
+      file: exercises/bai8.md
+    - id: bai9
+      title: "Bài 9"
+      file: exercises/bai9.md
+    - id: bai10
+      title: "Bài 10"
+      file: exercises/bai10.md
+    - id: bai11
+      title: "Bài 11"
+      file: exercises/bai11.md
